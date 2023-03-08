@@ -66,7 +66,7 @@ body {
   background-position: bottom 0 left 0, top 0 left 0;
   background-size: 900px 168px, cover, 100vw;
   background-repeat: no-repeat no-repeat;
-  padding-top: 132px;
+  padding-top: 142px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,6 +81,7 @@ body {
 @media (min-width: 900px) {
   body {
     background-size: contain, cover, 100vw;
+    padding-top: 132px;
   }
 }
 
@@ -93,6 +94,14 @@ body {
   color: #FFFFFF;
   max-width: 329px;
 }
+@media (min-width: 1440px) {
+  .title {
+    max-width: 450px;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 7.5px;
+  }
+}
 
 .timer {
   margin-top: 54px;
@@ -100,6 +109,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 16px;
+}
+@media (min-width: 1440px) {
+  .timer {
+    margin-top: 104px;
+    gap: 32px;
+  }
 }
 .timer .time-unit {
   display: -webkit-box;
@@ -113,6 +128,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 9px;
+}
+@media (min-width: 1440px) {
+  .timer .time-unit {
+    gap: 16px;
+  }
 }
 .timer .time-unit .flip-card {
   display: -webkit-inline-box;
@@ -133,10 +153,26 @@ body {
   position: relative;
   overflow: hidden;
 }
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .top_half, .timer .time-unit .flip-card .bottom_half {
+    width: 170px;
+    height: 70px;
+    font-size: 80px;
+    line-height: 71px;
+    letter-spacing: -2.4px;
+    padding: 35px;
+  }
+}
 .timer .time-unit .flip-card .top_half {
   background: #31334f;
   border-radius: 4px 4px 0px 0px;
   border-bottom: 0.25px solid rgba(25, 26, 35, 0.25);
+}
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .top_half {
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 0.5px solid rgba(25, 26, 35, 0.25);
+  }
 }
 .timer .time-unit .flip-card .top_half::before {
   content: "";
@@ -150,6 +186,12 @@ body {
   -webkit-transform: translate(50%, 50%);
           transform: translate(50%, 50%);
 }
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .top_half::before {
+    width: 12px;
+    height: 12px;
+  }
+}
 .timer .time-unit .flip-card .top_half::after {
   content: "";
   position: absolute;
@@ -162,6 +204,12 @@ body {
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
 }
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .top_half::after {
+    width: 12px;
+    height: 12px;
+  }
+}
 .timer .time-unit .flip-card .bottom_half {
   background: #343650;
   display: -webkit-box;
@@ -172,6 +220,12 @@ body {
           align-items: flex-end;
   border-radius: 0px 0px 4px 4px;
   border-top: 0.25px solid rgba(25, 26, 35, 0.25);
+}
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .bottom_half {
+    border-radius: 0px 0px 8px 8px;
+    border-bottom: 0.5px solid rgba(25, 26, 35, 0.25);
+  }
 }
 .timer .time-unit .flip-card .bottom_half::before {
   content: "";
@@ -185,6 +239,12 @@ body {
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
 }
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .bottom_half::before {
+    width: 12px;
+    height: 12px;
+  }
+}
 .timer .time-unit .flip-card .bottom_half::after {
   content: "";
   position: absolute;
@@ -197,9 +257,46 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card .bottom_half::after {
+    width: 12px;
+    height: 12px;
+  }
+}
 .timer .time-unit .flip-card-title {
   font-size: 7px;
   line-height: 9px;
   letter-spacing: 2.95937px;
   color: #8385A9;
+}
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card-title {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 5.91875px;
+  }
+}
+
+.icons-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32px;
+  position: absolute;
+  bottom: 80px;
+}
+.icons-footer svg path {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.icons-footer svg path:hover {
+  fill: #FB5E84;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+@media (min-width: 1440px) {
+  .icons-footer {
+    bottom: 100px;
+  }
 }

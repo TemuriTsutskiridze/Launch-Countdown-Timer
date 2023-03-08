@@ -1,3 +1,11 @@
+// top_half and bottom_half background circle size change on 1440px breakpoint
+@mixin circle() {
+    @media (min-width: 1440px) {
+        width: 12px;
+        height: 12px;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -7,13 +15,14 @@ body {
     background-position: bottom 0 left 0, top 0 left 0;
     background-size: 900px 168px, cover, 100vw;    
     background-repeat: no-repeat no-repeat;
-    padding-top: 132px;
+    padding-top: 142px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @media (min-width: 900px) {
         background-size: contain, cover, 100vw; 
+        padding-top: 132px;
     }
 }
 
@@ -25,6 +34,13 @@ body {
     text-transform: uppercase;
     color: #FFFFFF;
     max-width: 329px;
+
+    @media (min-width: 1440px) {
+        max-width: 450px;
+        font-size: 22px;
+        line-height: 29px;
+        letter-spacing: 7.5px;
+    }
 }
 
 .timer {
@@ -32,11 +48,20 @@ body {
     display: flex;
     gap: 16px;
 
+    @media (min-width: 1440px) {
+        margin-top: 104px;
+        gap: 32px;
+    }
+
     .time-unit {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 9px;
+
+        @media (min-width: 1440px) {
+            gap: 16px;
+        }
 
         .flip-card {
             display: inline-flex;
@@ -51,13 +76,27 @@ body {
                 color: #FB5E84;
                 position: relative;
                 overflow: hidden;
+
+                @media (min-width: 1440px) {
+                    width: 170px;
+                    height: 70px;
+                    font-size: 80px;
+                    line-height: 71px;
+                    letter-spacing: -2.4px;
+                    padding: 35px;
+                }
             }
     
             .top_half {
                 background: #31334f;
                 border-radius: 4px 4px 0px 0px;
-                border-bottom: 0.25px solid rgba(25, 26, 35, 0.25);;
+                border-bottom: 0.25px solid rgba(25, 26, 35, 0.25);
                 
+                @media (min-width: 1440px) {
+                    border-radius: 8px 8px 0px 0px;
+                    border-bottom: 0.5px solid rgba(25, 26, 35, 0.25);
+                }
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -68,6 +107,8 @@ body {
                     bottom: 0;
                     right: 0;
                     transform: translate(50%, 50%);
+
+                    @include circle();
                 }
     
                 &::after {
@@ -80,6 +121,8 @@ body {
                     bottom: 0;
                     left: 0;
                     transform: translate(-50%, 50%);
+
+                    @include circle();
                 }
             }
     
@@ -90,6 +133,11 @@ body {
                 border-radius: 0px 0px 4px 4px;
                 border-top: 0.25px solid rgba(25, 26, 35, 0.25);
     
+                @media (min-width: 1440px) {
+                    border-radius: 0px 0px 8px 8px;
+                    border-bottom: 0.5px solid rgba(25, 26, 35, 0.25);
+                }
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -100,6 +148,8 @@ body {
                     top: 0;
                     right: 0;
                     transform: translate(50%,- 50%);
+
+                    @include circle();
                 }
     
                 &::after {
@@ -112,6 +162,8 @@ body {
                     top: 0;
                     left: 0;
                     transform: translate(-50%, -50%);
+
+                    @include circle();
                 }
             }
         }
@@ -121,8 +173,33 @@ body {
             line-height: 9px;
             letter-spacing: 2.95937px;
             color: #8385A9;
+
+            @media (min-width: 1440px) {
+                font-size: 14px;
+                line-height: 19px;
+                letter-spacing: 5.91875px;
+            }
+        }
+    }
+}
+
+.icons-footer {
+    display: flex;
+    gap: 32px;
+    position: absolute;
+    bottom: 80px;
+
+    svg path {
+        transition: 0.5s;
+
+        &:hover {
+            fill: #FB5E84;
+            cursor: pointer;
+            transition: 0.5s;
         }
     }
 
-    
+    @media (min-width: 1440px) {
+        bottom: 100px;
+    }
 }
