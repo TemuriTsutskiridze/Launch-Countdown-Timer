@@ -66,6 +66,24 @@ body {
         .flip-card {
             display: inline-flex;
             flex-direction: column;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 10px;
+                bottom: -5px;
+                background: #191A23;
+                border-radius: 0px 0px 8px 8px;
+                z-index: -1;
+
+                @media (min-width: 1440px) {
+                    width: 170px;
+                    height: 80px;
+                    bottom: -10px;
+                }
+            }
     
             .top_half, .bottom_half {
                 width: 75px;
@@ -195,7 +213,6 @@ body {
         &:hover {
             fill: #FB5E84;
             cursor: pointer;
-            transition: 0.5s;
         }
     }
 

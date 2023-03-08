@@ -142,6 +142,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+}
+.timer .time-unit .flip-card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: -5px;
+  background: #191A23;
+  border-radius: 0px 0px 8px 8px;
+  z-index: -1;
+}
+@media (min-width: 1440px) {
+  .timer .time-unit .flip-card::after {
+    width: 170px;
+    height: 80px;
+    bottom: -10px;
+  }
 }
 .timer .time-unit .flip-card .top_half, .timer .time-unit .flip-card .bottom_half {
   width: 75px;
@@ -292,8 +310,6 @@ body {
 .icons-footer svg path:hover {
   fill: #FB5E84;
   cursor: pointer;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 @media (min-width: 1440px) {
   .icons-footer {
