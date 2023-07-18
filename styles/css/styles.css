@@ -181,6 +181,22 @@ body {
     padding: 35px;
   }
 }
+.timer .time-unit .flip-card .flip-down {
+  -webkit-animation: flip-down 250ms ease-in;
+          animation: flip-down 250ms ease-in;
+}
+@-webkit-keyframes flip-down {
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+@keyframes flip-down {
+  100% {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
 .timer .time-unit .flip-card .top_half {
   background: #31334f;
   border-radius: 4px 4px 0px 0px;
