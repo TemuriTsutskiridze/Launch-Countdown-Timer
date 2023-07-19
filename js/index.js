@@ -27,6 +27,15 @@ let countdown = () => {
   applyChanges(minute_elements, minute_counter);
   applyChanges(hour_elements, hour_counter);
   applyChanges(day_elements, day_counter);
+
+  if (
+    day_counter === 0 &&
+    hour_counter === 0 &&
+    minute_counter === 0 &&
+    second_counter === 0
+  ) {
+    clearInterval(intervalID);
+  }
 };
 
 function applyChanges(time_unit_elements, time_counter) {
@@ -35,7 +44,7 @@ function applyChanges(time_unit_elements, time_counter) {
   });
 }
 
-setInterval(countdown, 1000);
+let intervalID = setInterval(countdown, 1000);
 
 // second method
 
