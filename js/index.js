@@ -6,7 +6,7 @@ let hour_elements = document.querySelectorAll(".hours");
 let day_elements = document.querySelectorAll(".days");
 
 let countdown = () => {
-  let countDate = new Date("July 30, 2023 00:00:00").getTime();
+  let countDate = new Date("December 31, 2023 00:00:00").getTime();
   let now = new Date().getTime();
   let gap = countDate - now;
 
@@ -29,12 +29,16 @@ let countdown = () => {
   applyChanges(day_elements, day_counter);
 
   if (
-    day_counter === 0 &&
-    hour_counter === 0 &&
-    minute_counter === 0 &&
-    second_counter === 0
+    day_counter <= 0 &&
+    hour_counter <= 0 &&
+    minute_counter <= 0 &&
+    second_counter <= 0
   ) {
     clearInterval(intervalID);
+    applyChanges(second_elements, 0);
+    applyChanges(minute_elements, 0);
+    applyChanges(hour_elements, 0);
+    applyChanges(day_elements, 0);
   }
 };
 
